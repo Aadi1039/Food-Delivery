@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Seven Heaven</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="home.css" />
+  <script src="home.js" defer></script>
+</head>
+<body>
+  <header class="seven-header">
+    <h1 class="logo">🔥 Seven Heaven</h1>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="#" id="loginBtn">Login/Signup</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero animate">
+    <h2>Craving chaat or chinese? <span class="seven-text">Summon your snack squad</span> with the power of Seven!</h2>
+    <form class="search-bar" autocomplete="off">
+      <input type="text" placeholder="Search for dishes, combos, or cuisines..." />
+      <button type="submit" class="btn">🔍</button>
+    </form>
+    <button class="btn glow floating-cart" id="cartBtn" style="position:fixed;top:30px;right:40px;z-index:1000;cursor:grab;user-select:none;">🛒 Cart</button>
+  </section>
+
+  <section class="menu-section animate">
+    <div class="food-card flame" tabindex="0">
+      <img src="Assets/biryani.png" alt="Flaming Biryani">
+      <h3>🔥 Biryani no Jutsu</h3>
+      <div class="rating">
+        <span>⭐️⭐️⭐️⭐️☆</span>
+        <span class="rate-count">(120)</span>
+      </div>
+      <button class="btn order-btn">Order Now</button>
+    </div>
+    <div class="food-card cursed" tabindex="0">
+      <img src="Assets/momos.png" alt="Shadow Momos">
+      <h3>🥷 Shadow Stuffed Momos</h3>
+      <div class="rating">
+        <span>⭐️⭐️⭐️⭐️⭐️</span>
+        <span class="rate-count">(200)</span>
+      </div>
+      <button class="btn order-btn">Order Now</button>
+    </div>
+    <div class="food-card sage" tabindex="0">
+      <img src="Assets/thali.png" alt="Thali Scroll">
+      <h3>🌀 Grand Seven Thali</h3>
+      <div class="rating">
+        <span>⭐️⭐️⭐️⭐️☆</span>
+        <span class="rate-count">(95)</span>
+      </div>
+      <button class="btn order-btn">Order Now</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Seven Heaven | Made with Masala & Seven ⚡🇮🇳</p>
+  </footer>
+
+
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Login / Signup</h2>
+      <input type="text" placeholder="Email or Phone" />
+      <input type="password" placeholder="Password" />
+      <button class="btn">Continue</button>
+    </div>
+  </div>
+
+  
+  <button id="scrollTopBtn" title="Go to top">⬆️</button>
+  <script>
+    
+    const cartBtn = document.getElementById('cartBtn');
+    let isDragging = false, offsetX = 0, offsetY = 0;
+    if (cartBtn) {
+      cartBtn.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        offsetX = e.clientX - cartBtn.getBoundingClientRect().left;
+        offsetY = e.clientY - cartBtn.getBoundingClientRect().top;
+        cartBtn.style.transition = "none";
+      });
+      document.addEventListener('mousemove', function(e) {
+        if (isDragging) {
+          cartBtn.style.left = (e.clientX - offsetX) + "px";
+          cartBtn.style.top = (e.clientY - offsetY) + "px";
+          cartBtn.style.right = "auto";
+        }
+      });
+      document.addEventListener('mouseup', function() {
+        isDragging = false;
+        cartBtn.style.transition = "";
+      });
+    }
+  </script>
+</body>
+</html>

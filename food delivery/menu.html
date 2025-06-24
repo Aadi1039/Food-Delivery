@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Seven Heaven | Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="menu.css" />
+  <script src="menu.js" defer></script>
+  <style>
+    .floating-cart {
+      position: fixed;
+      top: 30px;
+      right: 40px;
+      z-index: 1000;
+      cursor: grab;
+      user-select: none;
+      transition: box-shadow 0.2s;
+    }
+    .floating-cart:active {
+      cursor: grabbing;
+      box-shadow: 0 0 16px #ff9900;
+    }
+  </style>
+</head>
+<body>
+  <header class="seven-header">
+    <h1 class="logo">🔥 Seven Heaven</h1>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="#" id="loginBtn">Login/Signup</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero animate">
+    <h2>🍜 Explore Our <span class="Seven-text">Anime-Inspired</span> Menu!</h2>
+    <p style="color:#ffe066; text-shadow:0 0 8px #ff9900;">From legendary biryanis to ninja momos, taste the seven in every bite!</p>
+  </section>
+
+  <section class="menu-section animate">
+    <div class="food-card flame" tabindex="0">
+      <img src="Assets/biryani.png" alt="Flaming Biryani">
+      <h3>🔥 Biryani no Jutsu</h3>
+      <div class="rating">
+        <span>⭐️⭐️⭐️⭐️☆</span>
+        <span class="rate-count">(120)</span>
+      </div>
+      <p class="desc">A legendary biryani with a spicy seven twist. Served with raita & salad.</p>
+      <div class="price">₹199</div>
+      <button class="btn order-btn">Order Now</button>
+    </div>
+
+    <div class="food-card cursed" tabindex="0">
+      <img src="Assets/momos.png" alt="Shadow Momos">
+      <h3>🥷 Shadow Stuffed Momos</h3>
+      <div class="rating">
+        <span>⭐️⭐️⭐️⭐️⭐️</span>
+        <span class="rate-count">(200)</span>
+      </div>
+      <p class="desc">Steamed momos filled with secret leaf village spices. Served with fiery dip.</p>
+      <div class="price">₹129</div>
+      <button class="btn order-btn">Order Now</button>
+    </div>
+
+    <div class="food-card sage" tabindex="0">
+      <img src="Assets/thali.png" alt="Thali Scroll">
+      <h3>🌀 Grand Seven Thali</h3>
+      <div class="rating">
+        <span>⭐️⭐️⭐️⭐️☆</span>
+        <span class="rate-count">(95)</span>
+      </div>
+      <p class="desc">A feast worthy of a Hokage! Includes 7 dishes, dessert & drink.</p>
+      <div class="price">₹299</div>
+      <button class="btn order-btn">Order Now</button>
+    </div>
+
+    <div class="food-card flame" tabindex="0">
+      <img src="Assets/ramen.png" alt="Naruto Ramen">
+      <h3>🍜 Naruto Ramen Bowl</h3>
+      <div class="rating">
+        <span>⭐️⭐️⭐️⭐️⭐️</span>
+        <span class="rate-count">(180)</span>
+      </div>
+      <p class="desc">Classic miso ramen with fish cake, egg, and a swirl of seven energy.</p>
+      <div class="price">₹249</div>
+      <button class="btn order-btn">Order Now</button>
+    </div>
+
+    <div class="food-card cursed" tabindex="0">
+      <img src="Assets/shushi.png" alt="Sasuke Sushi">
+      <h3>🍣 Sasuke Sushi Platter</h3>
+      <div class="rating">
+        <span>⭐️⭐️⭐️⭐️☆</span>
+        <span class="rate-count">(75)</span>
+      </div>
+      <p class="desc">Assorted sushi rolls with a mysterious Uchiha sauce.</p>
+      <div class="price">₹349</div>
+      <button class="btn order-btn">Order Now</button>
+    </div>
+
+    <div class="food-card sage" tabindex="0">
+      <img src="Assets/dango.png" alt="Konoha Dango">
+      <h3>🍡 Konoha Dango Trio</h3>
+      <div class="rating">
+        <span>⭐️⭐️⭐️⭐️⭐️</span>
+        <span class="rate-count">(60)</span>
+      </div>
+      <p class="desc">Sweet rice dumplings, a favorite of ninja senseis everywhere.</p>
+      <div class="price">₹99</div>
+      <button class="btn order-btn">Order Now</button>
+    </div>
+  </section>
+
+  <button class="btn glow floating-cart" id="cartBtn">🛒 Cart</button>
+
+  <div id="loginModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Login / Signup</h2>
+      <input type="text" placeholder="Email or Phone" />
+      <input type="password" placeholder="Password" />
+      <button class="btn">Continue</button>
+    </div>
+  </div>
+
+  <button id="scrollTopBtn" title="Go to top">⬆️</button>
+
+  <footer>
+    <p>© 2025 Seven Heaven | Made with Masala & Seven ⚡🇮🇳</p>
+  </footer>
+  <script>
+    // Animate on scroll
+    document.addEventListener("DOMContentLoaded", () => {
+      const animatedEls = document.querySelectorAll('.animate');
+      const animateOnScroll = () => {
+        animatedEls.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 60) {
+            el.classList.add('visible');
+          }
+        });
+      };
+      animateOnScroll();
+      window.addEventListener('scroll', animateOnScroll);
+
+      // Add to Cart functionality
+      let cartCount = 0;
+      const cartBtn = document.getElementById('cartBtn');
+      document.querySelectorAll('.order-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          cartCount++;
+          btn.textContent = "✔️ Added!";
+          setTimeout(() => {
+            btn.textContent = "Order Now";
+          }, 1200);
+          if (cartBtn) {
+            cartBtn.innerHTML = `🛒 Cart (${cartCount})`;
+          }
+        });
+      });
+
+      // Floating cart drag
+      let isDragging = false, offsetX = 0, offsetY = 0;
+      cartBtn.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        offsetX = e.clientX - cartBtn.getBoundingClientRect().left;
+        offsetY = e.clientY - cartBtn.getBoundingClientRect().top;
+        cartBtn.style.transition = "none";
+      });
+      document.addEventListener('mousemove', function(e) {
+        if (isDragging) {
+          cartBtn.style.left = (e.clientX - offsetX) + "px";
+          cartBtn.style.top = (e.clientY - offsetY) + "px";
+          cartBtn.style.right = "auto";
+        }
+      });
+      document.addEventListener('mouseup', function() {
+        isDragging = false;
+        cartBtn.style.transition = "";
+      });
+
+      // Login Modal
+      const loginBtn = document.getElementById('loginBtn');
+      const loginModal = document.getElementById('loginModal');
+      const closeModal = document.getElementById('closeModal');
+      if (loginBtn && loginModal && closeModal) {
+        loginBtn.onclick = (e) => {
+          e.preventDefault();
+          loginModal.style.display = 'flex';
+        };
+        closeModal.onclick = () => loginModal.style.display = 'none';
+        window.onclick = (e) => {
+          if (e.target === loginModal) loginModal.style.display = 'none';
+        };
+      }
+
+      // Scroll to top
+      const scrollBtn = document.getElementById('scrollTopBtn');
+      if (scrollBtn) {
+        window.onscroll = function() {
+          if (window.scrollY > 200) scrollBtn.style.display = "block";
+          else scrollBtn.style.display = "none";
+        };
+        scrollBtn.onclick = () => window.scrollTo({top:0, behavior:'smooth'});
+      }
+    });
+  </script>
+</body>
+</html>

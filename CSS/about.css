@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0a0a0a;
+  color: #fdfdfd;
+}
+
+.seven-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #220022, #550055);
+  padding: 20px 40px;
+  border-bottom: 2px solid #ff4081;
+}
+
+.logo {
+  font-size: 2rem;
+  color: #ff4081;
+  text-shadow: 0 0 10px #ff4081;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fdfdfd;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.2s;
+}
+
+nav a.active,
+nav a:hover {
+  color: #ff9900;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: #ff4081;
+  transition: width 0.3s;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px 40px 20px;
+  background: url('https://images.unsplash.com/photo-1605478371355-0c998ebef9e3') center/cover no-repeat;
+  position: relative;
+  border-bottom: 2px solid #ff9900;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  max-width: 800px;
+  margin: auto;
+  z-index: 2;
+  position: relative;
+  color: #ffe066;
+  text-shadow: 0 0 8px #ff9900, 0 0 16px #0081b3;
+}
+
+.seven-text {
+  color: #00e7ff;
+  text-shadow: 0 0 8px #00e7ff, 0 0 16px #0081b3;
+  font-weight: bold;
+}
+
+.about-section {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #18122b;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px #ff408144;
+  padding: 36px 28px;
+  color: #ffe066;
+  animation: fadeInUp 1s;
+}
+
+.about-section h3 {
+  color: #ff9900;
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+.about-section ul {
+  color: #fff;
+  margin-left: 1.2em;
+  margin-bottom: 18px;
+  padding-left: 0;
+}
+
+.about-section li {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.about-section a {
+  color: #00e7ff;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.about-section a:hover {
+  color: #ff9900;
+}
+
+footer {
+  background: #111;
+  text-align: center;
+  padding: 25px;
+  border-top: 2px solid #ff4081;
+  font-size: 0.9rem;
+  color: #ffe066;
+  letter-spacing: 1px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 18px 8px;
+  }
+  .seven-header {
+    flex-direction: column;
+    padding: 16px 10px;
+  }
+  nav ul {
+    gap: 12px;
+  }
+}

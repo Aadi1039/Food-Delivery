@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Us | Seven Heaven</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="CSS/contact.css">
+  <script src="Javascript/contact.js" defer></script>
+</head>
+<body>
+  <header class="seven-header">
+    <h1 class="logo">🔥 Seven Heaven</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact Us</a></li>
+        <li><a href="#" id="loginBtn">Login/Signup</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="ContactUs" class="animate">
+    <h2>Contact Us</h2>
+    <form action="#" autocomplete="off">
+      <div class="form-shape">
+        <label for="query">Type of Query</label>
+        <select id="query" required>
+          <option value="" selected disabled>Select</option>
+          <option>Order related Issues</option>
+          <option>Site related Issues</option>
+          <option>Complaint related Issues</option>
+          <option>Others</option>
+        </select>
+      </div>
+
+      <div class="form-shape">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your Name" required>
+      </div>
+
+      <div class="form-shape">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your Email" required>
+      </div>
+
+      <div class="form-shape">
+        <label for="pho">Phone</label>
+        <input type="tel" id="pho" placeholder="Enter your Phone no" required>
+      </div>
+
+      <div id="radio" class="form-shape">
+        <span>Are you a member of Seven Heaven?</span>
+        <label><input type="radio" name="member" value="yes" required> Yes</label>
+        <label><input type="radio" name="member" value="no"> No</label>
+      </div>
+
+      <div class="form-shape">
+        <label for="message">Describe your query</label>
+        <textarea id="message" cols="30" rows="5" placeholder="Type your message here..." required></textarea>
+      </div>
+
+      <input class="btn" type="submit" value="Submit">
+      <input class="btn" type="reset" value="Reset">
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Seven Heaven | Made with Masala & Seven ⚡🇮🇳</p>
+  </footer>
+</body>
+</html>
